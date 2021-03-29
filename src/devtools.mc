@@ -4,8 +4,8 @@ dir tools{
         reload
     }
     function player{
-        scoreboard players set turn chessdata 1
         scoreboard players set Blocks_n_more chessdata 1
+        function start:start/start
         function start:start/confirmed
     }
 }

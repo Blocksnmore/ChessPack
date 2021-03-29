@@ -7,3 +7,5 @@
 schedule function clock:__generated__/clock/0 1t
 scoreboard players set #execute LANG_MC_INTERNAL 0
 execute if score running chessdata matches 1 run function clock:__generated__/conditional/0
+scoreboard players set #execute LANG_MC_INTERNAL 0
+execute as @a unless score @s chessclick matches 0 run function clock:__generated__/conditional/5

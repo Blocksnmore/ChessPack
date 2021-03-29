@@ -18,6 +18,11 @@ scoreboard objectives add chessdata dummy
 scoreboard players set running chessdata 0
 scoreboard objectives remove chessclick
 scoreboard objectives add chessclick minecraft.used:minecraft.carrot_on_a_stick
+bossbar remove chess
+bossbar add chess {"color":"light_purple","text":"4 Player Chess"}
+bossbar set minecraft:chess visible true
+bossbar set minecraft:chess players @a
+bossbar set minecraft:chess color white
 setworldspawn 0 52 0
 spawnpoint @a 0 52 0
 tellraw @a ""

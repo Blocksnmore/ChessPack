@@ -2,6 +2,8 @@
 clock 1t{
     execute (if score running chessdata matches 1){
         execute (if score turn chessdata matches 1){
+            bossbar set minecraft:chess color blue
+            bossbar set minecraft:chess name {"color":"blue","text":"Blue's turn!","bold":true}
             (
                 title @a actionbar ["",
                     {"color":"blue","bold":true,"text":"["},
@@ -28,6 +30,8 @@ clock 1t{
             )
         } 
         execute (if score turn chessdata matches 2){
+            bossbar set minecraft:chess color yellow
+            bossbar set minecraft:chess name {"color":"yellow","text":"Yellow's turn!","bold":true}
             (
                 title @a actionbar ["",
                     {"color":"blue","bold":false,"text":"["},
@@ -54,6 +58,8 @@ clock 1t{
             )
         } 
         execute (if score turn chessdata matches 3){
+            bossbar set minecraft:chess color green
+            bossbar set minecraft:chess name {"color":"green","text":"Green's turn!","bold":true}
             (
                 title @a actionbar ["",
                     {"color":"blue","bold":false,"text":"["},
@@ -80,6 +86,8 @@ clock 1t{
             )
         } 
         execute (if score turn chessdata matches 4){
+            bossbar set minecraft:chess color red
+            bossbar set minecraft:chess name {"color":"red","text":"Red's turn!","bold":true}
             (
                 title @a actionbar ["",
                     {"color":"blue","bold":false,"text":"["},
@@ -105,5 +113,24 @@ clock 1t{
                 ]
             )
         } 
+    }
+    execute (as @a unless score @s chessclick matches 0){
+        execute (as @s if score @s chessdata = turn chessdata){
+            execute as @e[type=minecraft:armor_stand,nbt={ActiveEffects:[{Id:24b, Amplifier: 1b}]}] at @s run function chesslogic:getcolor
+        }
+        scoreboard players set @s chessclick 0   
+    }
+}
+
+clock 10s{
+    sequence{
+        LOOP(100, i){
+            bossbar set minecraft:chess value <%i%>
+            delay 1t
+        }
+        LOOP(100, i){
+            bossbar set minecraft:chess value <%100-i%>
+            delay 1t
+        }
     }
 }

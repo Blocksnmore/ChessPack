@@ -5,12 +5,10 @@
 ###
 
 schedule function game:__generated__/clock/0 1t
+bossbar set minecraft:chess players @a
 scoreboard players set #execute LANG_MC_INTERNAL 0
 execute if score running chessdata matches 1 run function game:__generated__/conditional/0
-clear @a[scores={chessdata=1}]
-clear @a[scores={chessdata=2}]
-clear @a[scores={chessdata=3}]
-clear @a[scores={chessdata=4}]
+clear @a minecraft:carrot_on_a_stick{CustomModelData:1}
 replaceitem entity @a[scores={chessdata=1}] container.0 minecraft:carrot_on_a_stick{CustomModelData:1}
 replaceitem entity @a[scores={chessdata=2}] container.0 minecraft:carrot_on_a_stick{CustomModelData:1}
 replaceitem entity @a[scores={chessdata=3}] container.0 minecraft:carrot_on_a_stick{CustomModelData:1}
