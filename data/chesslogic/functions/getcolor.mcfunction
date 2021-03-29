@@ -7,6 +7,8 @@
 fill -8 41 7 7 41 -8 minecraft:air replace minecraft:lime_carpet
 fill -8 41 7 7 41 -8 minecraft:air replace minecraft:light_gray_carpet
 fill -8 41 7 7 41 -8 minecraft:air replace minecraft:green_carpet
+kill @e[type=minecraft:armor_stand,nbt={Small:1b},name=se]
+kill @e[type=minecraft:armor_stand,nbt={Small:1b},name=s]
 execute if block ~ ~-1 ~ blue_concrete run function chesslogic:blue/movement
 execute if block ~ ~-1 ~ blue_wool run function chesslogic:blue/movement
 execute if block ~ ~-1 ~ yellow_concrete run function chesslogic:yellow/movement

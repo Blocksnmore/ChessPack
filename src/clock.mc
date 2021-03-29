@@ -116,7 +116,12 @@ clock 1t{
     }
     execute (as @a unless score @s chessclick matches 0){
         execute (as @s if score @s chessdata = turn chessdata){
-            execute as @e[type=minecraft:armor_stand,nbt={ActiveEffects:[{Id:24b, Amplifier: 1b}]}] at @s run function chesslogic:getcolor
+            execute (as @s if entity @e[type=minecraft:armor_stand,nbt={ActiveEffects:[{Id:24b, Amplifier: 1b}]}]){
+                execute as @e[type=minecraft:armor_stand,nbt={ActiveEffects:[{Id:24b, Amplifier: 1b}]}] at @s run function chesslogic:getcolor
+            }else{
+
+            }
+            
         }
         scoreboard players set @s chessclick 0   
     }
