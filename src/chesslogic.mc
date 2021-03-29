@@ -26,6 +26,14 @@ dir blue{
             setblock ~ ~1 ~ green_carpet
             execute if block ~-2 ~-1 ~ bedrock run setblock ~2 ~1 ~ light_gray_carpet
         }
+        execute (as @s at @s unless block ~1 ~-1 ~1 air unless block ~1 ~-1 ~1 blue_concrete unless block ~1 ~-1 ~1 blue_wool){
+            setblock ~1 ~1 ~1 light_gray_carpet
+            setblock ~ ~1 ~ green_carpet
+        }
+        execute (as @s at @s unless block ~1 ~-1 ~-1 air unless block ~1 ~-1 ~-1 blue_concrete unless block ~1 ~-1 ~-1 blue_wool){
+            setblock ~1 ~1 ~-1 light_gray_carpet
+            setblock ~ ~1 ~ green_carpet
+        }
     }
 }
 
