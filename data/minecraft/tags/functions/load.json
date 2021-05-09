@@ -1,1 +1,9 @@
-{"replace":false,"values":["load:load/load","game:__generated__/clock/0","clock:__generated__/clock/0","clock:__generated__/clock/1"]}
+{
+  "replace": false,
+  "values": [
+    "load:load/load",
+    "game:__generated__/clock/0",
+    "clock:__generated__/clock/0",
+    "clock:__generated__/clock/1"
+  ]
+}
